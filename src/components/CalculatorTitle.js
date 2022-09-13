@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Calculator = (props) => {
+const CalculatorTitle  = (props) => {
     return (
         <div className="calculator-title">
             { props.value }
