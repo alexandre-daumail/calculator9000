@@ -2,7 +2,7 @@ import React from 'react';
 
 const BeautifulScreen = () => {
     return (
-        <div className="beautifull-screen">
+        <div className="beautiful-screen">
             <input type="text" readOnly/>
         </div>
     )
