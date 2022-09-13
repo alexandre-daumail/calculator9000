@@ -4,6 +4,7 @@ const MagnificientEqualButton = () => {
   return (
     <input
       type="button"
+      id ="magnificient"
       value= "="
     />
   );

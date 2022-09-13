@@ -39,7 +39,7 @@
     text-align: right;
 }
 
-input[type="button"]{
+input[type="button"] {
     width: 100px;
     background: #4CAF50;
     border: 1px solid #222;
@@ -49,9 +49,12 @@ input[type="button"]{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    }
-    
-    input[type="button"]:active{
-     background: #ccc;
-    }
-    
+}
+
+input[type="button"]:active {
+    background: #ccc;
+}
+
+#magnificient {
+    background: red;
+}
