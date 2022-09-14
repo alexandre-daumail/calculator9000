@@ -1,11 +1,5 @@
 //Import React (Mandatory Step).
 import React from 'react';
-import '../index.css';
-import CalculatorTitle from './CalculatorTitle.js';
-import BeautifulScreen from './BeautifulScreen.js';
-import GreatOperationButton from './GreatOperationButton.js';
-import MagniﬁcientEqualButton from './MagniﬁcientEqualButton.js';
-import AmazingNumberButton from './AmazingNumberButton.js';
 
 class Calculator extends React.Component {
     render() {
@@ -60,4 +54,3 @@ class Calculator extends React.Component {
 }
 
 export default Calculator;
-

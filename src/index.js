@@ -1,13 +1,15 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom";
+
+import App from './App';
 import './index.css';
-import Calculator from './components/Calculator';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const rootElement = document.getElementById("root");
+ReactDOM.render(
   <React.StrictMode>
-    <Calculator />
-  </React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  rootElement
 );
