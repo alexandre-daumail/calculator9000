@@ -1,13 +1,112 @@
 import React, { useState } from "react";
 
-import Calculator from './components/Calculator';
+import Calculator from './components/Calculator.js';
 import CalculatorTitle from './components/CalculatorTitle';
 import BeautifulScreen from './components/BeautifulScreen';
 import GreatOperationButton from './components/GreatOperationButton';
 import MagniﬁcientEqualButton from './components/MagniﬁcientEqualButton';
 import AmazingNumberButton from './components/AmazingNumberButton';
+const App = () => {
+  let [calc, setCalc] = useState({
+    sign: "",
+    num: 0,
+    res: 0,
+  });
 
-return (
+  const numClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    if (removeSpaces(calc.num).length < 16) {
+      setCalc({
+        ...calc,
+        num:
+          removeSpaces(calc.num) % 1 === 0 && !calc.num.toString().includes(".")
+            ? toLocaleString(Number(removeSpaces(calc.num + value)))
+            : toLocaleString(calc.num + value),
+        res: !calc.sign ? 0 : calc.res,
+      });
+    }
+  };
+
+  const comaClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    setCalc({
+      ...calc,
+      num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
+    });
+  };
+
+  const signClickHandler = (e) => {
+    setCalc({
+      ...calc,
+      sign: e.target.innerHTML,
+      res: !calc.num
+        ? calc.res
+        : !calc.res
+        ? calc.num
+        : toLocaleString(
+            math(
+              Number(removeSpaces(calc.res)),
+              Number(removeSpaces(calc.num)),
+              calc.sign
+            )
+          ),
+      num: 0,
+    });
+  };
+
+  const equalsClickHandler = () => {
+    if (calc.sign && calc.num) {
+      setCalc({
+        ...calc,
+        res:
+          calc.num === "0" && calc.sign === "/"
+            ? "Can't divide with 0"
+            : toLocaleString(
+                math(
+                  Number(removeSpaces(calc.res)),
+                  Number(removeSpaces(calc.num)),
+                  calc.sign
+                )
+              ),
+        sign: "",
+        num: 0,
+      });
+    }
+  };
+
+  const invertClickHandler = () => {
+    setCalc({
+      ...calc,
+      num: calc.num ? toLocaleString(removeSpaces(calc.num) * -1) : 0,
+      res: calc.res ? toLocaleString(removeSpaces(calc.res) * -1) : 0,
+      sign: "",
+    });
+  };
+
+  const percentClickHandler = () => {
+    let num = calc.num ? parseFloat(removeSpaces(calc.num)) : 0;
+    let res = calc.res ? parseFloat(removeSpaces(calc.res)) : 0;
+    setCalc({
+      ...calc,
+      num: (num /= Math.pow(100, 1)),
+      res: (res /= Math.pow(100, 1)),
+      sign: "",
+    });
+  };
+
+  const resetClickHandler = () => {
+    setCalc({
+      ...calc,
+      sign: "",
+      num: 0,
+      res: 0,
+    });
+  };
+
+  return (
     <Calculator>
       <BeautifulScreen value={calc.num ? calc.num : calc.res} />
       <ButtonBox>
@@ -37,6 +136,7 @@ return (
         })}
       </ButtonBox>
     </Calculator>
-)
+  );
+};
 
 export default App;
