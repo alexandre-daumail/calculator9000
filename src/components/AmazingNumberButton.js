@@ -1,4 +1,4 @@
-import React from 'react';
+
   
 const AmazingNumberButton = (props) => {
   return (

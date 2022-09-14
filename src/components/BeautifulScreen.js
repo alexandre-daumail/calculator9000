@@ -1,11 +1,12 @@
-import React from 'react';
+import { Textfit } from "react-textfit";
+import "./BeautifulScreen.css";
 
-const BeautifulScreen = () => {
+const BeautifulScreen = ({ value }) => {
     return (
-        <div className="beautiful-screen">
-            <input type="text" readOnly/>
-        </div>
-    )
-}
+        <Textfit className="BeautifulScreen" mode="single" max={70}>
+            {value}
+        </Textfit>
+    );
+};
 
 export default BeautifulScreen;
