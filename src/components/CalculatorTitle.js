@@ -3,7 +3,7 @@
 const CalculatorTitle  = (props) => {
     return (
         <div className="calculator-title">
-            { props.value }
+            Calculator9000
         </div>
     )
 }

@@ -4,6 +4,7 @@ import Calculator from './components/Calculator.js';
 import CalculatorTitle from './components/CalculatorTitle';
 import BeautifulScreen from './components/BeautifulScreen';
 import ButtonBox from './components/ButtonBox';
+import AmazingNumberButton from './components/AmazingNumberButton';
 import Button from './components/Button';
 
 
@@ -15,26 +16,14 @@ const btnValues = [
   [0, ".", "="],
 ];
 
+
 const App = () => {
   return (
     <Calculator>
       <CalculatorTitle />
       <BeautifulScreen value="0" />
       <ButtonBox>
-        {
-          btnValues.flat().map((btn, i) => {
-            return (
-              <Button
-                key={i}
-                className={btn === "=" ? "equals" : ""}
-                value={btn}
-                onClick={() => {
-                  console.log(`${btn} clicked!`);
-                }}
-              />
-            );
-          })
-        }
+        <AmazingNumberButton/>
       </ButtonBox>
     </Calculator>
   );
