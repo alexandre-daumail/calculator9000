@@ -1,6 +1,6 @@
 
 
-const CalculatorTitle  = (props) => {
+const CalculatorTitle  = () => {
     return (
         <div className="calculator-title">
             Calculator9000
