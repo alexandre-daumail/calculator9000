@@ -5,6 +5,7 @@ import CalculatorTitle from './components/CalculatorTitle';
 import BeautifulScreen from './components/BeautifulScreen';
 import ButtonBox from './components/ButtonBox';
 import AmazingNumberButton from './components/AmazingNumberButton';
+import MagnificientEqualButton from './components/MagnificientEqualButton';
 import Button from './components/Button';
 
 
@@ -23,6 +24,7 @@ const App = () => {
       <CalculatorTitle />
       <BeautifulScreen value="0" />
       <AmazingNumberButton />
+      <MagnificientEqualButton />
     </Calculator>
   );
 };
