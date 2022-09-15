@@ -1,31 +1,35 @@
 import Button from './Button';
 import "./AmazingNumberButton.css";
+import { calculateNewValue } from '@testing-library/user-event/dist/utils';
 
-const AmazingNumberButton = () => {
+const AmazingNumberButton = (props) => {
 
   const amazingNumbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, "C", 0, "."]
 
-    return (
-      <div className="amazing-numbers">
+  const numClickHandler = (nbr) => {
 
-        {
-          amazingNumbers.map((number, i) => {
+    props.handleClickParent(nbr)
 
-            return (
-              <Button
-                key={i}
-                className={number === "=" ? "equals" : ""}
-                value={number}
-                onClick={() => {
-                  console.log(`${number} clicked!`);
-                }}
-              />
-            )
+  }
 
-          })
-        }
-      </div>
-    )
+  return (
+    <div className="amazing-numbers">
+
+      {
+        amazingNumbers.map((number, i) => {
+
+          return (
+            <Button
+              key={i}
+              value={number}
+              onClick={() => numClickHandler(number)}
+            />
+          )
+
+        })
+      }
+    </div>
+  )
 
 }
 
