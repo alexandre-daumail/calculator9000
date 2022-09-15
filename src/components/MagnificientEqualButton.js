@@ -8,7 +8,7 @@ const MagnificientEqualButton = () => {
       className="equals"
       value="="
       onClick={() => {
-        console.log(`equals clicked!`);
+        console.log(`equal clicked!`);
       }}
     />
   );

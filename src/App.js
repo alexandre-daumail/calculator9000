@@ -10,10 +10,17 @@ import Button from './components/Button';
 import GreatOperationButton from "./components/GreatOperationButton.js";
 
 const App = () => {
+
+  let [calc, setCalc] = useState({
+    sign: "",
+    num: 0,
+    res: 0,
+  });
+
   return (
     <Calculator>
       <CalculatorTitle />
-      <BeautifulScreen value="0" />
+      <BeautifulScreen value={calc.num ? calc.num : calc.res} />
       <ButtonBox>
       <AmazingNumberButton />
       <GreatOperationButton />
