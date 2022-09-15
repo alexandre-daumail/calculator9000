@@ -1,12 +1,30 @@
+import Button from './Button';
+import "./GreatOperationButton.css";
 
-  
-const GreatOperationButton = (props) => {
+const GreatOperationButton = () => {
+  const operators = ["+", "-", "*", "/"];
+
   return (
-    <input
-      type="button"
-      value={props.label}
-    />
-  );
+    <div className="great-opererator">
+
+      {
+        operators.map((operator, i) => {
+
+          return (
+            <Button
+              key={i}
+              className={operator === "=" ? "equals" : ""}
+              value={operator}
+              onClick={() => {
+                console.log(`${operator} clicked!`);
+              }}
+            />
+          )
+
+        })
+      }
+    </div>
+  )
 }
   
 // Export our button component.

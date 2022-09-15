@@ -7,24 +7,18 @@ import ButtonBox from './components/ButtonBox';
 import AmazingNumberButton from './components/AmazingNumberButton';
 import MagnificientEqualButton from './components/MagnificientEqualButton';
 import Button from './components/Button';
-
-
-const btnValues = [
-  ["C", "+-", "%", "/"],
-  [7, 8, 9, "X"],
-  [4, 5, 6, "-"],
-  [1, 2, 3, "+"],
-  [0, ".", "="],
-];
-
+import GreatOperationButton from "./components/GreatOperationButton.js";
 
 const App = () => {
   return (
     <Calculator>
       <CalculatorTitle />
       <BeautifulScreen value="0" />
+      <ButtonBox>
       <AmazingNumberButton />
+      <GreatOperationButton />
       <MagnificientEqualButton />
+      </ButtonBox>
     </Calculator>
   );
 };
