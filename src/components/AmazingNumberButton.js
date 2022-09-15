@@ -1,11 +1,12 @@
 import Button from './Button';
+import "./AmazingNumberButton.css";
 
 const AmazingNumberButton = () => {
 
   const amazingNumbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0]
 
     return (
-      <div>
+      <div className="amazing-numbers">
 
         {
           amazingNumbers.map((number, i) => {

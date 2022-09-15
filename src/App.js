@@ -22,9 +22,7 @@ const App = () => {
     <Calculator>
       <CalculatorTitle />
       <BeautifulScreen value="0" />
-      <ButtonBox>
-        <AmazingNumberButton/>
-      </ButtonBox>
+      <AmazingNumberButton />
     </Calculator>
   );
 };
