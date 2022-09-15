@@ -1,6 +1,6 @@
 import './App.css';
 
-function TheTitle() {
+const TheTitle = () => {
   return (
     <h1>Calculator9000</h1>
   );
