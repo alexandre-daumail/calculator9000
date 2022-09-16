@@ -5,7 +5,7 @@ const GreatOperationButton = () => {
   const operators = ["+", "-", "*", "/"];
 
   return (
-    <div className="great-opererator">
+    <div className="great-operator">
 
       {
         operators.map((operator, i) => {
