@@ -1,4 +1,3 @@
-import Button from './Button';
 import "./AmazingNumberButton.css";
 
 const AmazingNumberButton = (props) => {
@@ -9,10 +8,11 @@ const AmazingNumberButton = (props) => {
     <div className="amazing-numbers">
 
       {
-        amazingNumbers.map((number, i) => {
+        amazingNumbers.map((number, index) => {
 
           return (
-            <button
+            <button 
+              key={index}
               onClick={() => {
                 number === "C"
                   ? props.resetClickHandler()

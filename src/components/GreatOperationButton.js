@@ -1,28 +1,24 @@
-import Button from './Button';
 import "./GreatOperationButton.css";
 
 const GreatOperationButton = () => {
+
   const operators = ["+", "-", "*", "/"];
 
   return (
     <div className="great-opererator">
 
       {
-        operators.map((operator, i) => {
+        operators.map((operator, index) => {
 
           return (
-            <Button
-              key={i}
-              className={operator === "=" ? "equals" : ""}
-              value={operator}
-              onClick={() => {
-                console.log(`${operator} clicked!`);
-              }}
-            />
+            <button key={index} onClick={() => {console.log(`${operator} clicked!`)}}> 
+              {operator}
+            </button>
           )
 
         })
       }
+
     </div>
   )
 }
