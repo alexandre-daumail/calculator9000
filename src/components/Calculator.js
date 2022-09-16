@@ -54,6 +54,16 @@ const Calculator = () => {
     });
   };
 
+  const signClickHandler = (sign) => {
+      
+    setCalc({
+      ...calc,
+      sign: sign,
+      res: !calc.res && calc.num ? calc.num : calc.res,
+      num: 0,
+    });
+  };
+
   return (
 
     <div className="calculator">
@@ -69,7 +79,7 @@ const Calculator = () => {
           resetClickHandler={resetClickHandler} 
           commaClickHandler={commaClickHandler}
         />
-        <GreatOperationButton />
+        <GreatOperationButton signClickHandler={signClickHandler}/>
         <MagnificientEqualButton />
 
       </ButtonBox>

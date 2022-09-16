@@ -1,6 +1,6 @@
 import "../css/GreatOperationButton.css";
 
-const GreatOperationButton = () => {
+const GreatOperationButton = (props) => {
 
   const operators = ["+", "-", "*", "/"];
 
@@ -11,7 +11,7 @@ const GreatOperationButton = () => {
         operators.map((operator, index) => {
 
           return (
-            <button key={index} onClick={() => {console.log(`${operator} clicked!`)}}> 
+            <button key={index} onClick={() => {props.signClickHandler(operator)}}> 
               {operator}
             </button>
           )
