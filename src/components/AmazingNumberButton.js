@@ -12,16 +12,16 @@ const AmazingNumberButton = (props) => {
         amazingNumbers.map((number, i) => {
 
           return (
-            <Button
-              key={i}
-              value={number}
+            <button
               onClick={() => {
                 number === "C"
                   ? props.resetClickHandler()
                   : props.numClickHandler(number)
               }
               }
-            />
+            >
+              {number}
+            </button>
           )
         })
       }
