@@ -37,6 +37,15 @@ const Calculator = () => {
     }
   }
 
+  const resetClickHandler = () => {
+    setCalc({
+      ...calc,
+      sign: "",
+      num: 0,
+      res: 0,
+    });
+  };
+
   return (
 
     <div className="calculator">
@@ -47,7 +56,7 @@ const Calculator = () => {
 
       <ButtonBox>
 
-        <AmazingNumberButton handleClickParent={handleClickParent} />
+        <AmazingNumberButton handleClickParent={handleClickParent} resetClickHandler={resetClickHandler}/>
         <GreatOperationButton />
         <MagnificientEqualButton />
 

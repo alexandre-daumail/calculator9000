@@ -1,6 +1,6 @@
 import Button from './Button';
 import "./AmazingNumberButton.css";
-import { calculateNewValue } from '@testing-library/user-event/dist/utils';
+// import { calculateNewValue } from '@testing-library/user-event/dist/utils';
 
 const AmazingNumberButton = (props) => {
 
@@ -22,7 +22,11 @@ const AmazingNumberButton = (props) => {
             <Button
               key={i}
               value={number}
-              onClick={() => numClickHandler(number)}
+              onClick={ () => {
+                number === "C"
+                ? props.resetClickHandler()
+                :  numClickHandler(number)}
+              }
             />
           )
 
