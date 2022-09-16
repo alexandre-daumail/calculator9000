@@ -6,7 +6,6 @@ import BeautifulScreen from './components/BeautifulScreen';
 import ButtonBox from './components/ButtonBox';
 import AmazingNumberButton from './components/AmazingNumberButton';
 import MagnificientEqualButton from './components/MagnificientEqualButton';
-import Button from './components/Button';
 import GreatOperationButton from "./components/GreatOperationButton.js";
 
 const toLocaleString = (num) =>
@@ -31,8 +30,8 @@ const App = () => {
           calc.num === 0 && number === "0"
             ? "0"
             : removeSpaces(calc.num) % 1 === 0
-            ? toLocaleString(Number(removeSpaces(calc.num + number)))
-            : toLocaleString(calc.num + number),
+              ? toLocaleString(Number(removeSpaces(calc.num + number)))
+              : toLocaleString(calc.num + number),
         res: !calc.sign ? 0 : calc.res,
       });
     }
