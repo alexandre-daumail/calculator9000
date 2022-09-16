@@ -1,6 +1,7 @@
 import "../css/ItSOverNineThousand.css";
 
 const ItsOverNineThousand = () => {
+    
     return (
         <div>
             Its Over 9000 !!!

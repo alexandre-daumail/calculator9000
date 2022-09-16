@@ -1,7 +1,6 @@
 .calculator {
   width: 500px;
-  /* height: 540px; */
-  padding: 10px;
+  padding: 30px;
   border-radius: 10px;
   background-color: #485461;
   background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
@@ -29,4 +28,14 @@
   
   .equals:hover {
     background-color: rgb(228, 39, 15);
+  }
+
+  h1 {
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color: rgb(221, 205, 39);
+    text-align: center;;
+    border-radius: 10px;
+    padding: 22px;
+    margin: 10px;
   }
