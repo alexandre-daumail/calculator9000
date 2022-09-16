@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./Calculator.css";
+import "../css/Calculator.css";
 import CalculatorTitle from './CalculatorTitle';
 import BeautifulScreen from './BeautifulScreen';
 import ButtonBox from './ButtonBox';

@@ -1,4 +1,4 @@
-import "./MagnificientEqualButton.css";
+import "../css/MagnificientEqualButton.css";
 
 const MagnificientEqualButton = () => {
   return (

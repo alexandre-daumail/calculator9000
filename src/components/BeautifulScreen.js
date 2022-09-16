@@ -1,5 +1,5 @@
 import { Textfit } from "react-textfit";
-import "./BeautifulScreen.css";
+import "../css/BeautifulScreen.css";
 
 const BeautifulScreen = ({ value }) => {
     return (

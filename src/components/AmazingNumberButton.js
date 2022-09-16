@@ -1,4 +1,4 @@
-import "./AmazingNumberButton.css";
+import "../css/AmazingNumberButton.css";
 
 const AmazingNumberButton = (props) => {
 

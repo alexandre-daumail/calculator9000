@@ -1,4 +1,4 @@
-import "./GreatOperationButton.css";
+import "../css/GreatOperationButton.css";
 
 const GreatOperationButton = () => {
 

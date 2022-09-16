@@ -1,4 +1,4 @@
-import "./ButtonBox.css";
+import "../css/ButtonBox.css";
 
 const ButtonBox = ({ children }) => {
     return <div className="buttonBox">{children}</div>;
