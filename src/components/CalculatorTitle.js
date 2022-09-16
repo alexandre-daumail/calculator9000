@@ -1,10 +1,11 @@
 
-
 const CalculatorTitle  = () => {
     return (
-        <div className="calculator-title">
+
+        <h1 className="calculator-title">
             Calculator9000
-        </div>
+        </h1>
+
     )
 }
 

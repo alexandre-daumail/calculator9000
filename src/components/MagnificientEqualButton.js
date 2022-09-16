@@ -4,7 +4,7 @@ const MagnificientEqualButton = (props) => {
   return (
     <button
       key="="
-      className="equals"
+      className="equals .color-change-2x"
       onClick={() => {
         props.equalsClickHandler()
       }}

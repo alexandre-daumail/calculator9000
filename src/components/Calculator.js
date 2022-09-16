@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../css/Calculator.css";
 import CalculatorTitle from './CalculatorTitle';
@@ -6,7 +6,8 @@ import BeautifulScreen from './BeautifulScreen';
 import ButtonBox from './ButtonBox';
 import AmazingNumberButton from './AmazingNumberButton';
 import MagnificientEqualButton from './MagnificientEqualButton';
-import GreatOperationButton from "./GreatOperationButton.js";
+import GreatOperationButton from "./GreatOperationButton";
+import ItSOverNineThousand from "./ItSOverNineThousand";
 
 const toLocaleString = (num) =>
   String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, "$1 ");
@@ -50,12 +51,12 @@ const Calculator = () => {
 
     setCalc({
       ...calc,
-      num: !calc.num.toString().includes(".") ? calc.num + comma : calc.num, 
+      num: !calc.num.toString().includes(".") ? calc.num + comma : calc.num,
     });
   };
 
   const signClickHandler = (sign) => {
-      
+
     setCalc({
       ...calc,
       sign: sign,
@@ -71,10 +72,10 @@ const Calculator = () => {
         sign === "+"
           ? a + b
           : sign === "-"
-          ? a - b
-          : sign === "*"
-          ? a * b
-          : a / b;
+            ? a - b
+            : sign === "*"
+              ? a * b
+              : a / b;
 
       setCalc({
         ...calc,
@@ -82,35 +83,52 @@ const Calculator = () => {
           calc.num === "0" && calc.sign === "/"
             ? "Can't divide with 0"
             : toLocaleString(
-                math(
-                  Number(removeSpaces(calc.res)),
-                  Number(removeSpaces(calc.num)),
-                  calc.sign
-                )
-              ),
+              math(
+                Number(removeSpaces(calc.res)),
+                Number(removeSpaces(calc.num)),
+                calc.sign
+              )
+            ),
         sign: "",
         num: 0,
       });
     }
   };
 
+  useEffect(() => {
+
+    if (parseInt(removeSpaces(calc.res)) > 9000) {
+      console.log("lol");
+      document.querySelector("#divvi").style.display = "block"
+
+    } else {
+        console.log("nope");
+        document.querySelector("#divvi").style.display = "none"
+      }
+    
+  });
+  
   return (
 
     <div className="calculator">
 
       <CalculatorTitle />
 
+      <div id="divvi" >
+        <ItSOverNineThousand />
+      </div>
+
       <BeautifulScreen value={calc.num ? calc.num : calc.res} />
 
       <ButtonBox>
 
-        <AmazingNumberButton 
-          numClickHandler={numClickHandler} 
-          resetClickHandler={resetClickHandler} 
+        <AmazingNumberButton
+          numClickHandler={numClickHandler}
+          resetClickHandler={resetClickHandler}
           commaClickHandler={commaClickHandler}
         />
-        <GreatOperationButton signClickHandler={signClickHandler}/>
-        <MagnificientEqualButton equalsClickHandler={equalsClickHandler}/>
+        <GreatOperationButton signClickHandler={signClickHandler} />
+        <MagnificientEqualButton equalsClickHandler={equalsClickHandler} />
 
       </ButtonBox>
 
