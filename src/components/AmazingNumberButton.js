@@ -1,6 +1,5 @@
 import Button from './Button';
 import "./AmazingNumberButton.css";
-import { calculateNewValue } from '@testing-library/user-event/dist/utils';
 
 const AmazingNumberButton = (props) => {
 
