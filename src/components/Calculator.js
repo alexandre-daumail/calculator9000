@@ -64,6 +64,36 @@ const Calculator = () => {
     });
   };
 
+  const equalsClickHandler = () => {
+
+    if (calc.sign && calc.num) {
+      const math = (a, b, sign) =>
+        sign === "+"
+          ? a + b
+          : sign === "-"
+          ? a - b
+          : sign === "*"
+          ? a * b
+          : a / b;
+
+      setCalc({
+        ...calc,
+        res:
+          calc.num === "0" && calc.sign === "/"
+            ? "Can't divide with 0"
+            : toLocaleString(
+                math(
+                  Number(removeSpaces(calc.res)),
+                  Number(removeSpaces(calc.num)),
+                  calc.sign
+                )
+              ),
+        sign: "",
+        num: 0,
+      });
+    }
+  };
+
   return (
 
     <div className="calculator">
@@ -80,7 +110,7 @@ const Calculator = () => {
           commaClickHandler={commaClickHandler}
         />
         <GreatOperationButton signClickHandler={signClickHandler}/>
-        <MagnificientEqualButton />
+        <MagnificientEqualButton equalsClickHandler={equalsClickHandler}/>
 
       </ButtonBox>
 

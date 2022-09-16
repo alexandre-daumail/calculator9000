@@ -1,12 +1,12 @@
 import "../css/MagnificientEqualButton.css";
 
-const MagnificientEqualButton = () => {
+const MagnificientEqualButton = (props) => {
   return (
     <button
       key="="
       className="equals"
       onClick={() => {
-        console.log(`equal clicked!`);
+        props.equalsClickHandler()
       }}
     > = </button>
   );
