@@ -3,14 +3,13 @@ import "./MagnificientEqualButton.css";
 
 const MagnificientEqualButton = () => {
   return (
-    <Button
+    <button
       key="="
       className="equals"
-      value="="
       onClick={() => {
         console.log(`equal clicked!`);
       }}
-    />
+    > = </button>
   );
 }
   
