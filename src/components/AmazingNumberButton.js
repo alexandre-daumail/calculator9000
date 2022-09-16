@@ -6,12 +6,6 @@ const AmazingNumberButton = (props) => {
 
   const amazingNumbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, "C", 0, "."]
 
-  const numClickHandler = (nbr) => {
-
-    props.handleClickParent(nbr)
-
-  }
-
   return (
     <div className="amazing-numbers">
 
@@ -22,14 +16,14 @@ const AmazingNumberButton = (props) => {
             <Button
               key={i}
               value={number}
-              onClick={ () => {
+              onClick={() => {
                 number === "C"
-                ? props.resetClickHandler()
-                :  numClickHandler(number)}
+                  ? props.resetClickHandler()
+                  : props.numClickHandler(number)
+              }
               }
             />
           )
-
         })
       }
     </div>

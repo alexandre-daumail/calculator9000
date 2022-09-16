@@ -21,7 +21,7 @@ const Calculator = () => {
     res: 0,
   });
 
-  const handleClickParent = (number) => {
+  const numClickHandler = (number) => {
 
     if (removeSpaces(calc.num).length < 16) {
       setCalc({
@@ -56,7 +56,7 @@ const Calculator = () => {
 
       <ButtonBox>
 
-        <AmazingNumberButton handleClickParent={handleClickParent} resetClickHandler={resetClickHandler}/>
+        <AmazingNumberButton numClickHandler={numClickHandler} resetClickHandler={resetClickHandler}/>
         <GreatOperationButton />
         <MagnificientEqualButton />
 
