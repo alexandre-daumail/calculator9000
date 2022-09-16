@@ -46,6 +46,14 @@ const Calculator = () => {
     });
   };
 
+  const commaClickHandler = (comma) => {
+
+    setCalc({
+      ...calc,
+      num: !calc.num.toString().includes(".") ? calc.num + comma : calc.num, 
+    });
+  };
+
   return (
 
     <div className="calculator">
@@ -56,7 +64,11 @@ const Calculator = () => {
 
       <ButtonBox>
 
-        <AmazingNumberButton numClickHandler={numClickHandler} resetClickHandler={resetClickHandler}/>
+        <AmazingNumberButton 
+          numClickHandler={numClickHandler} 
+          resetClickHandler={resetClickHandler} 
+          commaClickHandler={commaClickHandler}
+        />
         <GreatOperationButton />
         <MagnificientEqualButton />
 

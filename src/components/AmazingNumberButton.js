@@ -16,6 +16,8 @@ const AmazingNumberButton = (props) => {
               onClick={() => {
                 number === "C"
                   ? props.resetClickHandler()
+                  : number === "."
+                  ? props.commaClickHandler(number)
                   : props.numClickHandler(number)
               }
               }
