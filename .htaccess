@@ -1,10 +1,6 @@
 # Enable RewriteEngine
 RewriteEngine On
 
-# Set the base directory (modify this to your actual subdirectory)
-# If your .htaccess is in the /projets/ directory, you might not need this line.
-# RewriteBase /projets/
-
 # Check if the requested file or directory doesn't exist
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
